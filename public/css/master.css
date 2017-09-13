@@ -1,13 +1,16 @@
+body{
+	min-height: 100vh;
+	background-color: #dccccc;
+}
 
 .navbar{
-	background-color: #c32e2e;
+	background-color: rgba(109, 0, 20, 0.94);
 	margin-bottom: 0;
 	border-bottom: 1px solid #5f0c0c;
 }
 
-.container-fluid{
+.container-fluid-no-padding{
 	padding: 0;
-	min-height: 100%;
 }
 
 #sidebar{
@@ -15,6 +18,14 @@
 	padding-right: 0;
 	padding-top: 0;
 	margin-top: 0;
+}
+
+#content{
+	background-color: white;
+}
+
+
+.full-height{
 	min-height: 100vh;
 }
 
@@ -40,5 +51,45 @@ a{
 	background-color: #af2f2f;
 	color: white;
 }
+
+#profile-name{
+	color: #061306;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.dropdown-toggle{
+	text-align: right;
+	font-size: 24px;
+}
+
+.dropdown-menu{
+	width: 200px;
+	text-align: right;
+	border: none;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	background-color: transparent;
+	color: white;
+}
+
+.set{
+	color: white;
+}
+.margin-top-bottom{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.button-no-radius{
+	border-radius: 0;
+}
+
+.sidebar-toggle{
+	margin-top: 15px;
+	margin-left: 0;
+}
+
 
 

@@ -15,3 +15,11 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/dashboard/view', 'HomeController@index');
+
+Route::get('/stores/view', 'StoresController@index');
+
+Route::get('/sales/view', 'SalesController@index');
+
+Route::get('products/view', 'ProductsController@index');

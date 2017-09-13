@@ -2,9 +2,8 @@
 
 @section('css')
 
-
 @endsection
 
 @section('content')
-Dashboard
+Sales
 @endsection
