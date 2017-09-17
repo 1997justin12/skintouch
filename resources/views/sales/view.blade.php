@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-Sales
+
 @endsection

@@ -78,18 +78,21 @@ a{
 	color: white;
 }
 .margin-top-bottom{
-	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 25px;
 }
 
 .button-no-radius{
 	border-radius: 0;
 }
 
-.sidebar-toggle{
-	margin-top: 15px;
-	margin-left: 0;
+#products{
+	letter-spacing: 1.5px;
 }
+b{
+	color: #5e755e;
+}
+
 
 
 

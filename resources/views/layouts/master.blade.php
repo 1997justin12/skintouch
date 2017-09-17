@@ -43,9 +43,7 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        <li><i class="btn fa fa-bars set sidebar-toggle" onclick="sidebar(this)"></i></li>
-                    </ul>
+        
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -54,24 +52,15 @@
                          <!--    <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li> -->
                         <!-- @else -->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" id="profile-name" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-sign-out set" title="Sign Out"></i>
-                                </a>
+                        <li>
+                             <a href="{{ route('logout') }}" class="dropdown-toggle" id="profile-name" data-toggle="dropdown" role="button"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out set" title="Sign Out"></i>
+                             </a>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                           <span>Logout</span> <i class="fa fa-unlock-alt"></i> 
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
+                              </form>
+                        </li>
                         <!-- @endif -->
                     </ul>
                 </div>

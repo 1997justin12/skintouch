@@ -22,4 +22,6 @@ Route::get('/stores/view', 'StoresController@index');
 
 Route::get('/sales/view', 'SalesController@index');
 
-Route::get('products/view', 'ProductsController@index');
+Route::get('/products/view', 'ProductsController@index');
+Route::get('/products/addProduct', 'ProductsController@addProducts');
+Route::post('/products/createProduct', 'ProductsController@createProducts');

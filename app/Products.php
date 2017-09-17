@@ -10,7 +10,7 @@ class Products extends Model
     use SoftDeletes;
 
     protected $fillable = [
-    		'name', 'price1', 'price2', 'price3'
+    		'name', 'retailers_price', 'members_price', 'resellers_price'
     	];
 
     protected $dates = ['deleted_at'];
