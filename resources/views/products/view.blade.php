@@ -10,7 +10,7 @@
 
 		<a href="addProduct" class="btn btn-info margin-top-bottom active button-no-radius" onclick="event.preventDefault();"><i class="fa fa-cubes"></i> <span>View Products Stock</span></a>
 
-		<table class="table table-condensed table-striped table-bordered compact" id="products">
+		<table class="table table-condensed table-striped table-bordered" id="products">
 			<thead>
 				<tr>
 					<th>Name of Product</th>
