@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Customer;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(auth()->user()->role){
+
+            $customers = Customer::all();
+
+         return view('admin', [
+            'customers' => $customers
+         ]);
+        }
+        else{
+            
+         return view('employee');
+        }
     }
 }

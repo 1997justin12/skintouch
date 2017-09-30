@@ -19,9 +19,13 @@ Route::get('/', 'HomeController@index');
 Route::get('/dashboard/view', 'HomeController@index');
 
 Route::get('/stores/view', 'StoresController@index');
+Route::get('/stores/addStore', 'StoresController@addStore');
+Route::post('/stores/addStore', 'StoresController@postStore');
 
 Route::get('/sales/view', 'SalesController@index');
 
 Route::get('/products/view', 'ProductsController@index');
 Route::get('/products/addProduct', 'ProductsController@addProducts');
 Route::post('/products/createProduct', 'ProductsController@createProducts');
+
+Route::get('/products/viewStocks', 'ProductStocksController@index');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products;
+use App\ProductStocks;
 use Illuminate\Support\Facades\Validator;
 
 class ProductsController extends Controller
@@ -32,7 +33,8 @@ class ProductsController extends Controller
     			'name' => 'required|unique:products',
     			'retailers_price' => 'required',
     			'members_price' => 'required',
-    			'resellers_price' => 'required'
+    			'resellers_price' => 'required',
+                'products_stock' => 'required'
     		]);
 
     	if($validator->fails()){
@@ -48,9 +50,14 @@ class ProductsController extends Controller
 
     	$products->save();
 
-    	return redirect('/products/addProduct')
-    			->with('success', 'New Products added!');
+        $stocks = new ProductStocks;
+        $stocks->product_id = $products->id;
+        $stocks->stocks = $input['products_stock'];
 
+        $stocks->save();
+
+    	return redirect('/products/addProduct')
+    			->with('success', 'Product ' . $products->name . ' added successfully!');
 
     }
 }

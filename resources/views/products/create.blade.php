@@ -6,6 +6,13 @@
 
 @section('content')
 <div class="row">
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-li"><a href="/products/view">View Products List</a></li>
+			<li class="breadcrumb-li active"><a href="#">Add New Product's</a></li>
+		</ol>
+
+
 	<div class="col-md-12">
 		<h3>Add Products</h3>
 	</div>
@@ -46,9 +53,13 @@
 			<label for="reseller's price">Reseller's Price</label>
 			<input type="text" name="resellers_price" value="{{old('name')}}" class="form-control">
 		</div>
+		<div class="form-group">
+			<label for="product's stock">Number of Stocks</label>
+			<input type="text" name="products_stock" value="{{old('name')}}" class="form-control">
+		</div>
 	</div>
 	<div class="form-action pull-right">
-			<button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+			<button type="submit" class="btn btn-"><i class="fa fa-plus"></i> Add</button>
 	</div>
 
 	</form>

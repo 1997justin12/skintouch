@@ -93,6 +93,17 @@ b{
 	color: #5e755e;
 }
 
+.breadcrumb-li{
+	border: none;
+}
+
+.breadcrumb > .breadcrumb-li > a:hover{
+	text-decoration: none;
+}
+
+.breadcrumb>li+li:before{
+	content: ">\A0";
+}
 
 
 

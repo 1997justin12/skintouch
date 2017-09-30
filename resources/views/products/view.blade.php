@@ -8,7 +8,7 @@
 	<div class="col-md-12">
 		<a href="addProduct" class="btn btn-info margin-top-bottom active button-no-radius"><i class="fa fa-cube"></i> <span>Add New Product</span></a>
 
-		<a href="addProduct" class="btn btn-info margin-top-bottom active button-no-radius" onclick="event.preventDefault();"><i class="fa fa-cubes"></i> <span>View Products Stock</span></a>
+		<a href="viewStocks" class="btn btn-info margin-top-bottom active button-no-radius"><i class="fa fa-cubes"></i> <span>View Products Stock</span></a>
 
 		<table class="table table-condensed table-striped table-bordered" id="products">
 			<thead>
@@ -43,8 +43,6 @@
 @endsection
 
 @section('js')
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<script type="text/javascript">
 
 		$("#products").dataTable();

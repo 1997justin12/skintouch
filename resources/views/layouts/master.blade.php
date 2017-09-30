@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/forms-style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/master.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
     @yield('css')
 </head>
@@ -71,7 +72,7 @@
                 <div class="row">
                    <div class="col-md-3 full-height container-fluid-no-padding" id="sidebar">
                        <ul class="nav nav-pills nav-stacked">
-                           <li><a href="/dashboard/view"><i class="fa fa-thumb-tack"></i> <span>Dashboard</span></a></li>
+                           <li><a href="/dashboard/view"><i class="fa fa-thumb-tack"></i> <span>Customers</span></a></li>
                            <li><a href="/stores/view"><i class="fa fa-sitemap"></i> <span>Stores</span></a></li>
                            <li><a href="/sales/view"><i class="fa fa-shopping-basket"></i> <span>Sales</span></a></li>
                            <li><a href="/products/view"><i class="fa fa-cubes"></i> <span>Products</span></a></li>
@@ -96,6 +97,8 @@
                 );
         }
     </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
     @yield('js')
 </body>
 </html>

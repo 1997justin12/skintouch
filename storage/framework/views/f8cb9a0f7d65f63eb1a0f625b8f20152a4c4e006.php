@@ -4,6 +4,13 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="row">
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-li"><a href="/products/view">View Products List</a></li>
+			<li class="breadcrumb-li active"><a href="#">Add New Product's</a></li>
+		</ol>
+
+
 	<div class="col-md-12">
 		<h3>Add Products</h3>
 	</div>
@@ -45,6 +52,10 @@
 		<div class="form-group">
 			<label for="reseller's price">Reseller's Price</label>
 			<input type="text" name="resellers_price" value="<?php echo e(old('name')); ?>" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="product's stock">Number of Stocks</label>
+			<input type="text" name="products_stock" value="<?php echo e(old('name')); ?>" class="form-control">
 		</div>
 	</div>
 	<div class="form-action pull-right">
