@@ -59,7 +59,7 @@
 		</div>
 	</div>
 	<div class="form-action pull-right">
-			<button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+			<button type="submit" class="btn btn-"><i class="fa fa-plus"></i> Add</button>
 	</div>
 
 	</form>

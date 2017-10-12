@@ -21,7 +21,7 @@ body{
 }
 
 #content{
-	background-color: white;
+	background-color: #f3f0ea;
 }
 
 
@@ -105,5 +105,16 @@ b{
 	content: ">\A0";
 }
 
+.btn-employee{
+	width: 40%;
+	border-radius: 0;
+	box-shadow: 2px 5px 10px 1px #0a193c;
+	outline: none !important;
+
+}
+
+.test{
+	margin-top: 25vh;
+}
 
 
