@@ -8,12 +8,15 @@
 	    border-left: 0;
 	    border-right: 0;
 	}
+
 	tr:first-child{
 		border-top: 0;
 	}
+
 	tr:last-child{
 		border-bottom: 0;
 	}
+
 	.table>tbody>tr>td:first-child{
 		border: none;
 		font-size: 16px;
@@ -72,10 +75,13 @@
  		<div class="panel-group" id="accordion">
 		  <div class="panel panel-default" >
 		    <div class="panel-heading">
-		      <h4 class="panel-title">
+		      <div class="panel-title" style="height: auto; line-height: 35px">
 		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
 		        {{ Auth::user()->name }}</a>
-		      </h4>
+		        <button class="btn btn-success pull-right">Checkout</button>
+		      </div>
+		      
+		      
 		    </div>
 		    <div id="collapse1" class="panel-collapse collapse in">
 		      <div class="panel-body">
@@ -105,6 +111,7 @@
 @section('js')
 <script type="text/javascript">
 	var itemListed = 1;
+	var arrayListedItem = [];
 	function searchItem(e){
 		if(e != ""){
 		var search = $.ajax({
@@ -162,6 +169,13 @@
 	function addItem(){
 		$("#checkout-item").css("display", "block");
 
+			arrayListedItem.push({
+				name : $("#name-of-item").val(),
+				price : $("#item-price").val(),
+				quantity : $("#item-quantity").val(),
+				totalpayment : $("#total-payment").val()
+			});
+
 		var item = "<tr>";
 			item += "<td>"+(itemListed++)+"</td>";
 			item += "<td>"+($("#name-of-item").val())+"</td>";
@@ -175,7 +189,12 @@
 		$("#item-price").val("");
 		$("#item-quantity").val("");
 		$("#total-payment").val("");
+
+		 console.log(arrayListedItem);
+	}
+
+	function checkOut(){
+
 	}
 </script>
-
 @endsection
