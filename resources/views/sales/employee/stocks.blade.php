@@ -57,24 +57,24 @@
  				<input type="text" name="" id="item-price" class="form-control" placeholder="Price" style="border-radius: 0">
  			</div>
  			<div class="form-group col-md-4" style="padding: 0">
- 				<input type="text" name="" onkeyup="calc(this.value)" class="form-control" placeholder="Quantity" style="border-radius: 0; border-left: none; border-right: none">
+ 				<input type="text" name="" id="item-quantity" onkeyup="calc(this.value)" class="form-control" placeholder="Quantity" style="border-radius: 0; border-left: none; border-right: none">
  			</div>
  			<div class="form-group col-md-4" style="padding: 0">
  				<input type="text" name="" id="total-payment" class="form-control" placeholder="Total Amount" style="border-radius: 0">
  			</div>
  		</div>
  		<div class="form-submit">
- 			<button type="button" class="btn btn-primary"><i class="fa fa-add"></i> Add Item</button>
+ 			<button type="button" class="btn btn-primary" onclick="addItem()"><i class="fa fa-add"></i> Add Item</button>
  		</div>
  	</div>
  	<div class="row">
- 	 <!-- <div class="col" style="padding: 0">
+ 	 <div class="col" style="padding: 0; display: none" id="checkout-item" >
  		<div class="panel-group" id="accordion">
 		  <div class="panel panel-default" >
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
 		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-		        Jonalyn Sabas</a>
+		        {{ Auth::user()->name }}</a>
 		      </h4>
 		    </div>
 		    <div id="collapse1" class="panel-collapse collapse in">
@@ -89,27 +89,22 @@
 		      				<th>Total</th>
 		      			</tr>
 		      		</thead>
-		      		<tbody>
-		      			<tr>
-		      				<td></td>
-		      				<td></td>
-		      				<td></td>
-		      				<td></td>
-		      				<td></td>
-		      			</tr>
+		      		<tbody id="tbody-item">
+		      			
 		      		</tbody>
 		      	</table>
 		      </div>
 		    </div>
 		  </div>
 		</div>
-     </div> -->
+     </div>
  	</div>
  </div>
 @endsection
 
 @section('js')
 <script type="text/javascript">
+	var itemListed = 1;
 	function searchItem(e){
 		if(e != ""){
 		var search = $.ajax({
@@ -162,6 +157,24 @@
 		var total = $("#item-price").val();
 		total *= e;
 		$("#total-payment").val("Php "+ total.toLocaleString());
+	}
+
+	function addItem(){
+		$("#checkout-item").css("display", "block");
+
+		var item = "<tr>";
+			item += "<td>"+(itemListed++)+"</td>";
+			item += "<td>"+($("#name-of-item").val())+"</td>";
+			item += "<td>"+($("#item-price").val())+"</td>";
+			item += "<td>"+($("#item-quantity").val())+"</td>";
+			item += "<td>"+($("#total-payment").val())+"</td>";
+			item += "</tr>";
+		$("#tbody-item").append(item);
+
+		$("#name-of-item").val("");
+		$("#item-price").val("");
+		$("#item-quantity").val("");
+		$("#total-payment").val("");
 	}
 </script>
 
