@@ -40,7 +40,7 @@
 		$(".table").DataTable({
 			"columns" : [
 				null,
-				null,
+				{"width" : "10%"},
 				{"width" : "5%"}
 			]
 		});

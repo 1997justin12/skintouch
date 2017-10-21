@@ -21,8 +21,14 @@ body{
 }
 
 #content{
+	background-color: #ffffff;
+}
+
+#content-slave{
 	background-color: #f3f0ea;
 }
+
+
 
 
 .full-height{

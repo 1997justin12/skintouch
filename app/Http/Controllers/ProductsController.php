@@ -60,4 +60,6 @@ class ProductsController extends Controller
     			->with('success', 'Product ' . $products->name . ' added successfully!');
 
     }
+
+    
 }

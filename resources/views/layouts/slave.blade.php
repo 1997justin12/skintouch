@@ -70,7 +70,7 @@
 
         <div class="container-fluid ">
                 <div class="row">
-                   <div class="col-md-12 full-height" id="content">
+                   <div class="col-md-12 full-height" id="content-slave">
                         @yield('content')
                    </div>
                 </div>

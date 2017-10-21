@@ -29,3 +29,8 @@ Route::get('/products/addProduct', 'ProductsController@addProducts');
 Route::post('/products/createProduct', 'ProductsController@createProducts');
 
 Route::get('/products/viewStocks', 'ProductStocksController@index');
+
+
+Route::get('/employee/products', 'ProductStocksController@employeeProducts');
+Route::get('/employee/searchItem/{e}', 'ProductStocksController@getItem');
+Route::get('/employee/itemDetails/{e}', 'ProductStocksController@getItemDetails');
