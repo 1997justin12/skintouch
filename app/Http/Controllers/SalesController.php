@@ -13,4 +13,8 @@ class SalesController extends Controller
     public function index(){
     	return view('sales.view');
     }
+
+    public function postSales($products){
+    	return true;
+    }
 }

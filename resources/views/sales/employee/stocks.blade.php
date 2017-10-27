@@ -78,7 +78,7 @@
 		      <div class="panel-title" style="height: auto; line-height: 35px">
 		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
 		        {{ Auth::user()->name }}</a>
-		        <button class="btn btn-success pull-right">Checkout</button>
+		        <button class="btn btn-success pull-right" onclick="checkOut()">Checkout</button>
 		      </div>
 		      
 		      
@@ -194,7 +194,20 @@
 	}
 
 	function checkOut(){
+		var checkOut  = $.ajax({ 
+			url: '/sales/postSales',
+			method: 'post',
+			data: arrayListedItem,
+			dataType: 'json'
+		});
 
+			checkOut.done(function(data){
+				console.log(data);
+			});
+
+			checkOut.fail(function(error, message){
+
+			});
 	}
 </script>
 @endsection

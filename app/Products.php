@@ -23,6 +23,4 @@ class Products extends Model
     	$this->belongsTo('App\Users');
     }
 
-
-
 }

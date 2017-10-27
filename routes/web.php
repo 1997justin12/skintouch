@@ -23,6 +23,7 @@ Route::get('/stores/addStore', 'StoresController@addStore');
 Route::post('/stores/addStore', 'StoresController@postStore');
 
 Route::get('/sales/view', 'SalesController@index');
+Route::post('/sales/postSales', 'SalesController@postSales');
 
 Route::get('/products/view', 'ProductsController@index');
 Route::get('/products/addProduct', 'ProductsController@addProducts');
