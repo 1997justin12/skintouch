@@ -80,8 +80,6 @@
 		        {{ Auth::user()->name }}</a>
 		        <button class="btn btn-success pull-right" onclick="checkOut()">Checkout</button>
 		      </div>
-		      
-		      
 		    </div>
 		    <div id="collapse1" class="panel-collapse collapse in">
 		      <div class="panel-body">
@@ -96,7 +94,6 @@
 		      			</tr>
 		      		</thead>
 		      		<tbody id="tbody-item">
-		      			
 		      		</tbody>
 		      	</table>
 		      </div>
@@ -135,7 +132,7 @@
 		else{
 					$("#search-results").css("display", "none");
 		 }	
-		}
+	}
 
 	function checkItem(e){
 		var getItem = $.ajax({
@@ -190,14 +187,14 @@
 		$("#item-quantity").val("");
 		$("#total-payment").val("");
 
-		 console.log(arrayListedItem);
 	}
 
 	function checkOut(){
 		var checkOut  = $.ajax({ 
 			url: '/sales/postSales',
 			method: 'post',
-			data: arrayListedItem,
+			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			data: {arrayListedItem},
 			dataType: 'json'
 		});
 

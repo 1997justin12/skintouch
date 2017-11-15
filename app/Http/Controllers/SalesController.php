@@ -14,7 +14,7 @@ class SalesController extends Controller
     	return view('sales.view');
     }
 
-    public function postSales($products){
-    	return true;
+    public function postSales(Request $products){
+    	return $products;
     }
 }
