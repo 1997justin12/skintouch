@@ -37,16 +37,14 @@
  			<a href="#" class="btn btn-default"><i class="fa fa-edit"></i> </a>
  			<div class="form-group pull-right col-md-4" style="padding: 0">
  				<select class="form-control" id="membership-type">
- 					<option>Membership Type</option>
- 					<option value="none">None</option>
- 					<option value="member">Members</option>
- 					<option value="reseller">Resellers</option>
+ 					<option>Retailers</option>
  				</select>
  			</div>
  	</div>
  	<div class="row margin-top-bottom">
  		<div class="form-group">
  			<input type="text" name="" id="name-of-item" class="form-control" placeholder="Name of Item" onkeyup="searchItem(this.value)" style="border-radius: 0">
+ 			<input type="hidden" id="id-of-item">
  			<div id="search-results" class="col-md-12" style="padding: 5px; background-color: white; display: none; position: absolute; z-index: 9999999; border: 1px solid #ccbebe; border-top: none;">
  				<table class="table table-hover">
  					<tbody id="display-results">
@@ -144,16 +142,10 @@
 		getItem.done(function(data){	
 			var type = $("#membership-type").val();
 			$("#name-of-item").val(data['name']);
-			if(type == 'member'){
-				$('#item-price').val(data['members_price']);
-				$("#search-results").css("display", "none");
-			}else if(type == 'reseller'){
-				$('#item-price').val(data['resellers_price']);
-				$("#search-results").css("display", "none");
-			}else{
+			$("#id-of-item").val(data['id']);
+		
 				$('#item-price').val(data['retailers_price']);
 				$("#search-results").css("display", "none");
-			}
 		});
 	}
 
@@ -167,8 +159,7 @@
 		$("#checkout-item").css("display", "block");
 
 			arrayListedItem.push({
-				name : $("#name-of-item").val(),
-				price : $("#item-price").val(),
+				id : $("#id-of-item").val(),
 				quantity : $("#item-quantity").val(),
 				totalpayment : $("#total-payment").val()
 			});
@@ -199,12 +190,13 @@
 		});
 
 			checkOut.done(function(data){
-				console.log(data);
+				location.reload();
 			});
 
 			checkOut.fail(function(error, message){
-
+				console.log(error);
 			});
+
 	}
 </script>
 @endsection

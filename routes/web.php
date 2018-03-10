@@ -21,15 +21,23 @@ Route::get('/dashboard/view', 'HomeController@index');
 Route::get('/stores/view', 'StoresController@index');
 Route::get('/stores/addStore', 'StoresController@addStore');
 Route::post('/stores/addStore', 'StoresController@postStore');
+Route::get('/stores/view/branch/{e}', 'StoresController@getStore');
+Route::post('/stores/add/stock', 'StoresController@postStocks');
+Route::get('/stores/view/sales/{e}', 'StoresController@getSales');
+Route::post('/store/add/manager', 'StoresController@postManager');
 
 Route::get('/sales/view', 'SalesController@index');
 Route::post('/sales/postSales', 'SalesController@postSales');
+Route::get('sales/store/{e}', 'SalesController@getSalesStore');
 
 Route::get('/products/view', 'ProductsController@index');
 Route::get('/products/addProduct', 'ProductsController@addProducts');
 Route::post('/products/createProduct', 'ProductsController@createProducts');
 
 Route::get('/products/viewStocks', 'ProductStocksController@index');
+ROute::get('/products/viewStocks/{e}', 'ProductStocksController@getProductStocks');
+
+Route::get('/sales/get/product/{e}', 'ProductsController@getProductPrice');
 
 
 Route::get('/employee/products', 'ProductStocksController@employeeProducts');

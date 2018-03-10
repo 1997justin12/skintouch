@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\ProductStocks;
 
 class HomeController extends Controller
 {
@@ -33,8 +34,16 @@ class HomeController extends Controller
          ]);
         }
         else{
-            
-         return view('employee');
+
+        $productStocks = ProductStocks::
+                         where('store_id', auth()->user()->store_id)
+                         ->get();
+        $customers = Customer::all();
+        
+         return view('employee',[
+            'customers' => $customers,
+            'productStocks' => $productStocks
+         ]);
         }
     }
 }

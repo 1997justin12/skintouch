@@ -29,7 +29,7 @@
 								<td><?php echo e($store->landmark); ?></td>		
 								<td><?php echo e($store->sales); ?></td>	
 								<td>
-								<a href=""><i class="fa fa-eye"></i></a>
+								<a href="view/branch/<?php echo e($store->id); ?>"><i class="fa fa-eye"></i></a>
 								<a href="" onclick="event.preventDefault()"><i class="fa fa-trash delete-branch" id="<?php echo e($store->id); ?>"></i></a>
 								</td>	
 							</tr>

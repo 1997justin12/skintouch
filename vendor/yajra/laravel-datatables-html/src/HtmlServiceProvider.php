@@ -2,18 +2,11 @@
 
 namespace Yajra\DataTables;
 
-use Collective\Html\HtmlServiceProvider as CollectiveHtml;
 use Illuminate\Support\ServiceProvider;
+use Collective\Html\HtmlServiceProvider as CollectiveHtml;
 
 class HtmlServiceProvider extends ServiceProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
     /**
      * Bootstrap the application events.
      *
@@ -22,9 +15,10 @@ class HtmlServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'datatables');
-        $this->mergeConfigFrom(__DIR__ . '/resources/config/config.php', 'datatables-html');
 
-        $this->publishAssets();
+        if ($this->app->runningInConsole()) {
+            $this->publishAssets();
+        }
     }
 
     /**
@@ -45,20 +39,12 @@ class HtmlServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/resources/config/config.php', 'datatables-html');
+
         $this->app->register(CollectiveHtml::class);
 
         $this->app->bind('datatables.html', function () {
             return $this->app->make(Html\Builder::class);
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return string[]
-     */
-    public function provides()
-    {
-        return ['datatables.html'];
     }
 }

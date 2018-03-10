@@ -34,7 +34,7 @@ class ProductsController extends Controller
     			'retailers_price' => 'required',
     			'members_price' => 'required',
     			'resellers_price' => 'required',
-                'products_stock' => 'required'
+                // 'products_stock' => 'required'
     		]);
 
     	if($validator->fails()){
@@ -50,15 +50,20 @@ class ProductsController extends Controller
 
     	$products->save();
 
-        $stocks = new ProductStocks;
-        $stocks->product_id = $products->id;
-        $stocks->stocks = $input['products_stock'];
+        // $stocks = new ProductStocks;
+        // $stocks->product_id = $products->id;
+        // $stocks->stocks = $input['products_stock'];
 
-        $stocks->save();
+        // $stocks->save();
 
     	return redirect('/products/addProduct')
     			->with('success', 'Product ' . $products->name . ' added successfully!');
 
+    }
+
+    public function getProductPrice($id){
+        $products = Products::where('id', $id)->get();
+        return $products;
     }
 
     

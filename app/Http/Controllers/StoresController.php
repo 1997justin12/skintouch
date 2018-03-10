@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Sales;
 use App\Stores;
+use App\Products;
+use App\ProductStocks;
 use Illuminate\Support\Facades\Validator;
 
 class StoresController extends Controller
@@ -22,6 +26,7 @@ class StoresController extends Controller
     public function addStore(){
     	return view('stores.create');
     }
+
 
     public function postStore(Request $request){
     	$input = $request->all();
@@ -51,6 +56,51 @@ class StoresController extends Controller
     	$store->save();
     	return redirect('/stores/addStore')
     		->with('success', "You've add new Branch.");
+
+    }
+
+    public function getStore($id){        
+        $products = Products::all();
+        $productStocks = ProductStocks::all()->where('store_id', $id);
+        return view('stores.store', [
+            'store' => $id, 
+            'products' => $products,
+            'productStocks' => $productStocks
+        ]);
+    }
+
+    public function postStocks(){
+
+       $requestStocks = $_POST['dataStocks'];
+
+       $productStocks = new ProductStocks;
+       $productStocks->store_id = $requestStocks['storeId'];
+       $productStocks->product_id =  $requestStocks['productId'];
+       $productStocks->stocks = $requestStocks['stockQuantity'];
+
+       $productStocks->save();  
+
+    }
+
+    public function getSales($id){
+
+        return view('stores.sales',
+            [
+                'store' => $id
+            ]);
+    }
+
+
+    public function postManager(){
+        $requestManager = $_POST['dataManager'];
+
+        $storeUser = new User;
+        $storeUser->store_id = $requestManager['storeId'];
+        $storeUser->name = $requestManager['name'];
+        $storeUser->email = $requestManager['email'];
+        $storeUser->password = bcrypt($requestManager['password']);
+        $storeUser->role = 0;
+        $storeUser->save();
 
     }
 }

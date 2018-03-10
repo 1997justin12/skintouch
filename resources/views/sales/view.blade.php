@@ -14,7 +14,13 @@
 	</div>
 
 	<div>
-		
+		<div class="">
+					
+		</div>
 	</div>
 </div>
+@endsection
+
+@section('script')
+
 @endsection

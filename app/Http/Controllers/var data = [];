@@ -1,0 +1,71 @@
+var data = [];
+var first = 0;
+
+for(int x=0; x<data.length; x++){
+
+ var checkData = data[x];
+ var indexRepeated = [];
+
+
+ for(int y=0; y<data.length; y++)
+	{	
+		if(data[y+1] != null){
+			if(first < data[y+1]){
+			 first = y+1;
+			}
+
+		}
+	}
+}
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var scatterChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'Scatter DatasetA',
+            data: [
+            {
+                x: -10,
+                y: 0
+            }, {
+                x: 0,
+                y: 10
+            }, {
+                x: 10,
+                y: 5
+            }]
+        },
+
+        {
+            label: 'Scatter DatasetB',
+            data: [
+            {
+                x: 10,
+                y: 0
+            }, {
+                x: 0,
+                y: 10
+            }, {
+                x: 20,
+                y: 10
+            }
+
+
+            ]
+        }
+
+
+
+        ]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: 'linear',
+                position: 'bottom'
+            }]
+        }
+    }
+});

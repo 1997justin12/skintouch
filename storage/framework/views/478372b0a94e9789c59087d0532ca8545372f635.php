@@ -11,8 +11,8 @@
     <title><?php echo e(config('app.name', 'SkinTouch')); ?></title>
 
     <!-- Styles -->
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/forms-style.css')); ?>">
+    <link href="<?php echo e(asset('public/css/app.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('public/css/forms-style.css')); ?>">
 </head>
 <body>
     <div id="app">

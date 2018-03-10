@@ -31,7 +31,7 @@
 								<td>{{ $store->landmark }}</td>		
 								<td>{{ $store->sales }}</td>	
 								<td>
-								<a href=""><i class="fa fa-eye"></i></a>
+								<a href="view/branch/{{$store->id}}"><i class="fa fa-eye"></i></a>
 								<a href="" onclick="event.preventDefault()"><i class="fa fa-trash delete-branch" id="{{ $store->id }}"></i></a>
 								</td>	
 							</tr>

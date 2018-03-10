@@ -4,8 +4,8 @@ namespace Yajra\DataTables\Transformers;
 
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
-use League\Fractal\Serializer\SerializerAbstract;
 use League\Fractal\TransformerAbstract;
+use League\Fractal\Serializer\SerializerAbstract;
 
 class FractalTransformer
 {
@@ -38,10 +38,23 @@ class FractalTransformer
             $this->fractal->setSerializer($this->createSerializer($serializer));
         }
 
-        $resource   = new Collection($output, $this->createTransformer($transformer));
-        $collection = $this->fractal->createData($resource)->toArray();
+        $collector = [];
+        foreach ($transformer as $transform) {
+            if ($transform != null) {
+                $resource       = new Collection($output, $this->createTransformer($transform));
+                $collection     = $this->fractal->createData($resource)->toArray();
+                $transformed    = $collection['data'];
+                $collector      = array_map(function ($item_collector, $item_transformed) {
+                    if ($item_collector === null) {
+                        $item_collector = [];
+                    }
 
-        return $collection['data'];
+                    return array_merge($item_collector, $item_transformed);
+                }, $collector, $transformed);
+            }
+        }
+
+        return $collector;
     }
 
     /**

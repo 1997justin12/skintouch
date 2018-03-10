@@ -53,10 +53,6 @@
 			<label for="reseller's price">Reseller's Price</label>
 			<input type="text" name="resellers_price" value="<?php echo e(old('name')); ?>" class="form-control">
 		</div>
-		<div class="form-group">
-			<label for="product's stock">Number of Stocks</label>
-			<input type="text" name="products_stock" value="<?php echo e(old('name')); ?>" class="form-control">
-		</div>
 	</div>
 	<div class="form-action pull-right">
 			<button type="submit" class="btn btn-"><i class="fa fa-plus"></i> Add</button>

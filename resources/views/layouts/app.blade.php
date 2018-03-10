@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'SkinTouch') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/forms-style.css') }}">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/forms-style.css') }}">
 </head>
 <body>
     <div id="app">
