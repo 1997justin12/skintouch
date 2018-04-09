@@ -71,8 +71,10 @@ class ComposerStaticInitc024e2d2c4cf0b17f7efbb983a633425
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'PhpParser\\' => 10,
+            'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
         'M' => 
         array (
@@ -220,6 +222,10 @@ class ComposerStaticInitc024e2d2c4cf0b17f7efbb983a633425
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -227,6 +233,10 @@ class ComposerStaticInitc024e2d2c4cf0b17f7efbb983a633425
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PhpOffice\\PhpSpreadsheet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
         'Monolog\\' => 
         array (
@@ -354,6 +364,7 @@ class ComposerStaticInitc024e2d2c4cf0b17f7efbb983a633425
     );
 
     public static $classMap = array (
+        'AddColumnBranchIdInTableInventory' => __DIR__ . '/../..' . '/database/migrations/2018_04_03_000356_add_column_branch_id_in_table_inventory.php',
         'AddColumnBranchIdInTableSales' => __DIR__ . '/../..' . '/database/migrations/2018_03_04_011218_add_column_branch_id_in_table_sales.php',
         'AddColumnStoreIdInTableProductStocks' => __DIR__ . '/../..' . '/database/migrations/2018_03_04_015603_add_column_store_id_in_table_product_stocks.php',
         'AddColumnUserIdInTableStores' => __DIR__ . '/../..' . '/database/migrations/2018_03_04_014530_add_column_user_id_in_table_stores.php',
@@ -362,9 +373,12 @@ class ComposerStaticInitc024e2d2c4cf0b17f7efbb983a633425
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'ChangeColumnNameInTableProducts' => __DIR__ . '/../..' . '/database/migrations/2017_10_21_103446_change_column_name_in_table_products.php',
+        'CreateInventorySalesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_09_030857_create_inventory_sales_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateRequestsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_12_112534_create_requests_table.php',
         'CreateTableBranch' => __DIR__ . '/../..' . '/database/migrations/2017_09_24_045325_create_table_branch.php',
         'CreateTableCustomer' => __DIR__ . '/../..' . '/database/migrations/2017_09_29_093701_create_table_customer.php',
+        'CreateTableInventory' => __DIR__ . '/../..' . '/database/migrations/2018_04_02_235100_create_table_inventory.php',
         'CreateTableProductStocks' => __DIR__ . '/../..' . '/database/migrations/2017_09_23_235203_create_table_product_stocks.php',
         'CreateTableProducts' => __DIR__ . '/../..' . '/database/migrations/2017_09_12_041446_create_table_products.php',
         'CreateTableSales' => __DIR__ . '/../..' . '/database/migrations/2017_12_26_023323_create_table_sales.php',

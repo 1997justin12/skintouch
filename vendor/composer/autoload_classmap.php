@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddColumnBranchIdInTableInventory' => $baseDir . '/database/migrations/2018_04_03_000356_add_column_branch_id_in_table_inventory.php',
     'AddColumnBranchIdInTableSales' => $baseDir . '/database/migrations/2018_03_04_011218_add_column_branch_id_in_table_sales.php',
     'AddColumnStoreIdInTableProductStocks' => $baseDir . '/database/migrations/2018_03_04_015603_add_column_store_id_in_table_product_stocks.php',
     'AddColumnUserIdInTableStores' => $baseDir . '/database/migrations/2018_03_04_014530_add_column_user_id_in_table_stores.php',
@@ -14,9 +15,12 @@ return array(
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'ChangeColumnNameInTableProducts' => $baseDir . '/database/migrations/2017_10_21_103446_change_column_name_in_table_products.php',
+    'CreateInventorySalesTable' => $baseDir . '/database/migrations/2018_04_09_030857_create_inventory_sales_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateRequestsTable' => $baseDir . '/database/migrations/2018_03_12_112534_create_requests_table.php',
     'CreateTableBranch' => $baseDir . '/database/migrations/2017_09_24_045325_create_table_branch.php',
     'CreateTableCustomer' => $baseDir . '/database/migrations/2017_09_29_093701_create_table_customer.php',
+    'CreateTableInventory' => $baseDir . '/database/migrations/2018_04_02_235100_create_table_inventory.php',
     'CreateTableProductStocks' => $baseDir . '/database/migrations/2017_09_23_235203_create_table_product_stocks.php',
     'CreateTableProducts' => $baseDir . '/database/migrations/2017_09_12_041446_create_table_products.php',
     'CreateTableSales' => $baseDir . '/database/migrations/2017_12_26_023323_create_table_sales.php',

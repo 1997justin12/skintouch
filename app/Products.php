@@ -23,4 +23,8 @@ class Products extends Model
     	$this->belongsTo('App\Users');
     }
 
+    public function productSales(){
+        return $this->hasMany('App\Sales', 'product_id', 'id');
+    }
+
 }

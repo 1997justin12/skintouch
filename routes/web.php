@@ -25,10 +25,14 @@ Route::get('/stores/view/branch/{e}', 'StoresController@getStore');
 Route::post('/stores/add/stock', 'StoresController@postStocks');
 Route::get('/stores/view/sales/{e}', 'StoresController@getSales');
 Route::post('/store/add/manager', 'StoresController@postManager');
+Route::post('/store/post/request', 'StoresController@postRequests');
 
 Route::get('/sales/view', 'SalesController@index');
 Route::post('/sales/postSales', 'SalesController@postSales');
 Route::get('sales/store/{e}', 'SalesController@getSalesStore');
+Route::post('/sales/inventory', 'SalesController@salesInventory');
+Route::get('/sales/inventory/weekly', 'SalesController@getWeeklyInventory');
+
 
 Route::get('/products/view', 'ProductsController@index');
 Route::get('/products/addProduct', 'ProductsController@addProducts');
